@@ -111,10 +111,21 @@ void do_ls(const char *dir)
         return;
     }
 
-    // Step 2: Print filenames in adaptive columns
+    // Step 2: Sort filenames alphabetically (like ls)
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = i + 1; j < count; j++) {
+            if (strcmp(filenames[i], filenames[j]) > 0) {
+                char *temp = filenames[i];
+                filenames[i] = filenames[j];
+                filenames[j] = temp;
+            }
+        }
+    }
+
+    // Step 3: Print filenames in adaptive columns
     print_in_columns(filenames, count);
 
-    // Step 3: Free memory
+    // Step 4: Free memory
     for (int i = 0; i < count; i++) {
         free(filenames[i]);
     }
