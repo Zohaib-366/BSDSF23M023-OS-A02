@@ -1,8 +1,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c18
-SRC = src/lsv1.3.0.c
-OBJ = obj/lsv1.3.0.o
-BIN = bin/lsv1.3.0
+SRC = src/lsv1.4.0.c
+OBJ = obj/lsv1.4.0.o
+BIN = bin/lsv1.4.0
 
 all: $(BIN)
 
